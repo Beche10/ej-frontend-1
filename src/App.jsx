@@ -1,9 +1,19 @@
+import { Aside } from "./components/Aside"
+import { Pokemons } from "./components/Pokemons"
+
 function App() {
   
 
   return (
     <>
-      <h1 className="text-2xl font-bold"> Pokedex </h1>
+      <section> 
+      <main>
+     
+     <Pokemons />
+     <Aside />
+      
+      </main> 
+      </section>
     </>
   )
 }
