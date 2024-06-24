@@ -1,7 +1,8 @@
-import { IconSearch } from '@tabler/icons-react';
-import axios from 'axios';
 import React from 'react';
+import { IconSearch } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
+import { PokemonList } from './PokemonList';
+
 
 export const Pokemons = () => {
     
@@ -11,7 +12,10 @@ export const Pokemons = () => {
 
     
     useEffect(() => {
-        fetch("http://localhost:8080/api/pokemones/all")
+
+        const pokemonURL = "http://localhost:8080/api/pokemones/all";
+
+        fetch(pokemonURL)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -44,6 +48,7 @@ export const Pokemons = () => {
                 </button>
             </div>
          </form>
+              <PokemonList pokemons={allPokemones}/>
         </section>
     );
 };

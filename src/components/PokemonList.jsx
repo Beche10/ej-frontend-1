@@ -1,15 +1,18 @@
 import React from 'react'
+import { PokemonPreview } from './PokemonPreview'
 
 
-export const PokemonList = () => {
-  
-  
-  
+export const PokemonList = ({ pokemons }) => {
     return (
-  
-        <div>PokemonList</div>
-  
-  
-  
-   )
-}
+        <section>
+            {
+                pokemons.map((pokemon) => (
+                    <PokemonPreview key={pokemon.id} pokemon={pokemon} />
+                ))
+            }
+        </section>
+    );
+};
+
+
+
