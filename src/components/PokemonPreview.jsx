@@ -9,10 +9,12 @@ export const PokemonPreview = ({ pokemon }) => {
         <header>
         <img src={pokemon.image} alt={pokemon.image}/>
         </header>
-        <span>N° 1</span>
-        <h4>Pokemon Name</h4>
+        <span>N°{pokemon?.id}</span>
+        <h4>{pokemon?.name}</h4>
         <ul>
-        <li>Poison</li>
+        {pokemon?.type.map((type, index) => (
+          <li key={index}>{type}</li> 
+         ))}
         </ul>
     </article>
   )
