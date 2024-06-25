@@ -1,4 +1,5 @@
 import { Aside } from "./components/Aside"
+import { ModalPokemon } from "./components/ModalPokemon"
 import { Pokemons } from "./components/Pokemons"
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
      
         <Pokemons />
         <Aside />
-      
+        <ModalPokemon />
+        
         </main> 
       </section>
     </>
