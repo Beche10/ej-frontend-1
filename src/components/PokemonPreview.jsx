@@ -16,7 +16,7 @@ export const PokemonPreview = ({ pokemon }) => {
         <h4 className='text-lg'>{pokemon?.name}</h4>
         <ul className='flex gap-2 justify-center'>
         {pokemon?.type.map((type, index) => (
-          <li className={`p-1 rounded-md px-2 text-white ${colorByType[type]}`} key={index}>{type}</li> 
+          <li className={`p-1 rounded-md px-2 text-white text-sm ${colorByType[type]}`} key={index}>{type}</li> 
          ))}
         </ul>
     </article>
