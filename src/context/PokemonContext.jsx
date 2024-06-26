@@ -10,13 +10,14 @@ export const PokemonProvider = ({ children }) => {
 
     const showPokemon = (pokemonInfo) => {
 
-        const {id, name, skills, type } = pokemonInfo;
+        const {id, name, skills, type, animatedImage  } = pokemonInfo;
 
         setPokemonDetail({
             id,
             name,
             skills,
-            type
+            type,
+            animatedImage
         });
 
         setShowDetailPokemon(true);
