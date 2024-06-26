@@ -4,10 +4,21 @@ import { createContext, useState } from "react";
 export const PokemonContext = createContext();
 
 export const PokemonProvider = ({ children }) => {
-
+    
+    const [pokemonDetail, setPokemonDetail] = useState(null);
     const [showDetailPokemon, setShowDetailPokemon] = useState(false)
 
-    const showPokemonById = () => {
+    const showPokemon = (pokemonInfo) => {
+
+        const {id, name, skills, type } = pokemonInfo;
+
+        setPokemonDetail({
+            id,
+            name,
+            skills,
+            type
+        });
+
         setShowDetailPokemon(true);
     };
 
@@ -17,7 +28,7 @@ export const PokemonProvider = ({ children }) => {
 
     return (<PokemonContext.Provider value={{
         showDetailPokemon,
-        showPokemonById,
+        showPokemon,
         closePokemonDetail
     }}
     > {children} 
