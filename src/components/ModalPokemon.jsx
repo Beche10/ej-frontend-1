@@ -12,7 +12,7 @@ export const ModalPokemon = ({ showModal, onCloseModal, pokemon }) => {
      </button>
      <article className={`bg-white h-[85%] absolute w-full rounded-tl-3xl rounded-tr-3xl text-center transition-all duration-500 ${showModal ? 'bottom-0' : '-bottom-full'}`}>
        <header>
-        <img src={pokemon.animatedImage} alt="" />
+        <img src={pokemon?.animatedImage} alt="" />
        </header>
        <span>
         N°{pokemon?.id}
@@ -22,6 +22,15 @@ export const ModalPokemon = ({ showModal, onCloseModal, pokemon }) => {
           <li className={`p-1 rounded-md px-2 text-white text-sm ${colorByType[type]}`} key={index}>{type}</li> 
          ))}
         </ul>
+        <h4>Pokemon Entry</h4>
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe magnam dolor amet tempora laudantium officia voluptatibus placeat vel enim hic? Recusandae possimus odio adipisci officiis dolores blanditiis, vitae consequuntur ipsa.
+        </div>
+        <section>
+          <div>
+           <span>{pokemon?.skills}</span> 
+          </div>
+        </section>
      </article>
     </section>
   )
