@@ -5,7 +5,7 @@ import { usePokemonContext } from "./hooks/usePokemonContext"
 
 function App() {
   
-  const { showDetailPokemon, closePokemonDetail } = usePokemonContext();
+  const { showDetailPokemon, closePokemonDetail, pokemonDetail } = usePokemonContext();
 
   return (
     <>
@@ -16,7 +16,9 @@ function App() {
         <Aside />
         <ModalPokemon 
           showModal={showDetailPokemon} 
-          onCloseModal={closePokemonDetail}/>
+          onCloseModal={closePokemonDetail}
+          pokemon={pokemonDetail}
+        />
        </main> 
       </section>
     </>
