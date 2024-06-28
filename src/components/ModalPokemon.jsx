@@ -10,26 +10,33 @@ export const ModalPokemon = ({ showModal, onCloseModal, pokemon }) => {
      <button onClick={onCloseModal} className='bg-white absolute top-4 right-4 p-1 rounded-lg hover:opacity-80 transition-opacity'>
         <IconX size={34} stroke={4}/>
      </button>
-     <article className={`bg-white h-[85%] absolute w-full rounded-tl-3xl rounded-tr-3xl text-center transition-all duration-500 ${showModal ? 'bottom-0' : '-bottom-full'}`}>
+     <article className={`bg-white h-[85%] absolute w-full rounded-tl-3xl rounded-tr-3xl text-center transition-all duration-500 px-4 grid gap-2 content-start ${showModal ? 'bottom-0' : '-bottom-full'}`}>
        <header>
         <img src={pokemon?.animatedImage} alt="" />
        </header>
-       <span>
-        N°{pokemon?.id}
-       </span> 
+       <span className='text-slate-400 text-sm font-semibold '> N°{pokemon?.id} </span> 
+       <h2 className='font-bold text-lg capitalize'> {pokemon?.name} </h2>
        <ul className='flex gap-2 justify-center'>
         {pokemon?.type.map((type, index) => (
           <li className={`p-1 rounded-md px-2 text-white text-sm ${colorByType[type]}`} key={index}>{type}</li> 
          ))}
         </ul>
-        <h4>Pokemon Entry</h4>
         <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe magnam dolor amet tempora laudantium officia voluptatibus placeat vel enim hic? Recusandae possimus odio adipisci officiis dolores blanditiis, vitae consequuntur ipsa.
+        <h4 className='font-bold capitalize'>Pokemon Entry</h4>
+        <p className='text-slate-400'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe magnam dolor amet tempora laudantium officia voluptatibus placeat vel enim hic? Recusandae possimus odio adipisci officiis dolores blanditiis, vitae consequuntur ipsa.</p>
         </div>
-        <section>
-          <div>
-           <span>{pokemon?.skills}</span> 
-          </div>
+        <section className="grid gap-2">
+          <h4 className="font-bold capitalize">Abilities</h4>
+          <ul className="grid grid-cols-2 gap-4">
+            {pokemon?.skills.map((skill) => (
+              <li
+                key={skill}
+                className="bg-slate-100 block rounded-full p-1 capitalize"
+              >
+                <span>{skill}</span>
+              </li>
+            ))}
+          </ul>
         </section>
      </article>
     </section>
