@@ -1,5 +1,6 @@
 import { Aside } from "./components/Aside"
 import { ModalPokemon } from "./components/ModalPokemon"
+import { PokemonDetail } from "./components/PokemonDetail";
 import { Pokemons } from "./components/Pokemons"
 import { usePokemonContext } from "./hooks/usePokemonContext"
 
@@ -13,7 +14,7 @@ function App() {
        <main className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_350px]">
      
         <Pokemons />
-        <Aside />
+        <Aside pokemon={pokemonDetail}/>
         <ModalPokemon 
           showModal={showDetailPokemon} 
           onCloseModal={closePokemonDetail}

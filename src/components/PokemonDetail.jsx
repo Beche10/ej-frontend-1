@@ -2,10 +2,8 @@ import React from 'react'
 import { colorByType } from '../utils/constants';
 
 
-export const PokemonDetail = (pokemon) => {
+export const PokemonDetail = ({ pokemon }) => {
   
-
-
   
     return (
     
