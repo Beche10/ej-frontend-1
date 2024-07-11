@@ -6,5 +6,5 @@
 
 
 .pixelated {
-    image-rendering: pixelated;
+    image-rendering: auto;
  }
