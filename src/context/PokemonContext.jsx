@@ -6,10 +6,13 @@ export const PokemonContext = createContext();
 export const PokemonProvider = ({ children }) => {
     
     const [pokemonDetail, setPokemonDetail] = useState(null);
-    const [showDetailPokemon, setShowDetailPokemon] = useState(false)
+    const [showDetailPokemon, setShowDetailPokemon] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const showPokemon = (pokemonInfo) => {
-
+        
+        setIsLoading(true);
+        
         const {id, name, skills, type, animatedImage  } = pokemonInfo;
 
         setPokemonDetail({
@@ -19,6 +22,11 @@ export const PokemonProvider = ({ children }) => {
             type,
             animatedImage
         });
+        
+        setShowDetailPokemon(true);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 500);
 
         setShowDetailPokemon(true);
     };
@@ -31,7 +39,8 @@ export const PokemonProvider = ({ children }) => {
         showDetailPokemon,
         showPokemon,
         closePokemonDetail,
-        pokemonDetail
+        pokemonDetail,
+        isLoading
     }}
     > {children} 
     </PokemonContext.Provider>
