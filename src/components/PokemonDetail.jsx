@@ -9,7 +9,7 @@ export const PokemonDetail = ({ pokemon }) => {
     
         <>
         <header className='absolute left-1/2 -translate-x-1/2 -translate-y-[92%] scale-[180%]'>
-        <img src={pokemon?.animatedImage} alt="" />
+        <img className="pixelated" src={pokemon?.animatedImage} alt="" />
         </header>
         <div className='overflow-y-auto px-4 pt-12 grid gap-2 content-start'>
         <span className='text-slate-400 text-sm font-semibold '> N°{pokemon?.id} </span> 

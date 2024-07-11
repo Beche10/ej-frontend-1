@@ -12,9 +12,8 @@ export const Pokemons = () => {
     const [pokemonName, setPokemonName] = useState('');
 
     const pokemonByName = allPokemones.filter( (pokemon) => pokemon.name.toLowerCase().includes(pokemonName.toLowerCase()));   
-    console.log(pokemonByName);
-
-
+    
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         setPokemonName(e.target.pokemonName.value);
